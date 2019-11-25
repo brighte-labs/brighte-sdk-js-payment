@@ -1,0 +1,46 @@
+{
+  "name": "brighte-sdk-js-payment",
+  "version": "1.0.0",
+  "description": "Javascript SDK for interacting with payment service",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "build": "tsc",
+    "prepare": "npm run buld",
+    "prepublish": "npm test && npm run lint",
+    "preversion": "npm run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Chris Young <chris.young@brighte.com.au>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "@types/isomorphic-fetch": "0.0.35",
+    "es6-promise": "^4.2.8",
+    "isomorphic-fetch": "^2.2.1",
+    "query-string": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/fetch-mock": "^7.3.2",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "jest-fetch-mock": "^2.1.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.2"
+  }
+}

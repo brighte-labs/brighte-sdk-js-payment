@@ -12,10 +12,11 @@ export class Request {
     'Content-Type': 'application/json',
   });
 
-  constructor(method: string, api: string, path: string) {
+  constructor(method: string, api: string, path: string, auth: string) {
     this.api = api;
     this.method = method;
     this.path = path;
+    this.headers.append('Authorization', `Bearer ${auth}`);
   }
 
   public setPayload(payload: object): void {

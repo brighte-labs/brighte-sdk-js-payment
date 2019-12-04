@@ -10,7 +10,7 @@ describe('Request', (): void => {
   test('success', async (): Promise<any> => {
     const body = [{ data: '12345' }];
     fetchAny.mockResponseOnce(JSON.stringify(body));
-    const request = new Request('GET', 'http://localhost:8080/', 'endpoint');
+    const request = new Request('GET', 'http://localhost:8080/', 'endpoint', 'jwt');
     request.setParams({ userId: 10 });
     const result = await request.fetchArray();
     expect(result).toEqual(body);
@@ -18,7 +18,7 @@ describe('Request', (): void => {
   test('failure', async (): Promise<any> => {
     const body = { error: 'invalid token' };
     fetchAny.mockResponseOnce(JSON.stringify(body), { status: 401 });
-    const request = new Request('GET', 'http://localhost:8080/', 'endpoint');
+    const request = new Request('GET', 'http://localhost:8080/', 'endpoint', 'jwt');
     request.setParams({ userId: 10 });
     await request.fetchArray().catch((e: Error) => {
       expect(e.message).toEqual('401 invalid token');

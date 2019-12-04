@@ -38,7 +38,7 @@ export class Request {
   public async do(): Promise<Response> {
     let query: string = '';
     const init =
-      this.method === 'get'
+      this.method === 'GET'
         ? {
             headers: this.headers,
             method: this.method,
@@ -48,7 +48,7 @@ export class Request {
             headers: this.headers,
             method: this.method,
           };
-    if (this.payload) {
+    if (this.payload && this.method !== 'GET') {
       init.body = JSON.stringify(this.payload);
     }
     if (this.params) {

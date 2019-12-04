@@ -2,7 +2,7 @@
   "name": "brighte-sdk-js-payment",
   "version": "1.0.0",
   "description": "Javascript SDK for interacting with payment service",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",

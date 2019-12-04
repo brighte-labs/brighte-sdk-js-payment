@@ -37,11 +37,17 @@ export class Request {
 
   public async do(): Promise<Response> {
     let query: string = '';
-    const init = {
-      body: '',
-      headers: this.headers,
-      method: this.method,
-    };
+    const init =
+      this.method === 'get'
+        ? {
+            headers: this.headers,
+            method: this.method,
+          }
+        : {
+            body: '',
+            headers: this.headers,
+            method: this.method,
+          };
     if (this.payload) {
       init.body = JSON.stringify(this.payload);
     }

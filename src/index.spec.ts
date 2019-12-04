@@ -4,8 +4,10 @@ const methods = [
     cardExpiry: '04/22',
     cardHolder: 'Steve Rogers',
     cardNumber: '1234xxxxxxxx1234',
+    cardType: 'VISA',
     id: 'asfiejfaslfsafi4aj',
     token: 'fdsaflsa;kfjaseifja',
+    type: 'card',
   },
 ];
 const get = {

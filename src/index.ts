@@ -17,8 +17,10 @@ class paymentService {
         cardExpiry: record.cardExpiry,
         cardHolder: record.cardHolder,
         cardNumber: record.cardNumber,
+        cardType: record.cardType,
         id: record.id,
         token: record.token,
+        type: record.type,
       }),
     );
   };

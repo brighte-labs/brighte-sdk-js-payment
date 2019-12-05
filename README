@@ -1,0 +1,24 @@
+# Brighte Payment Service Javascript SDK
+
+This library makes it easy to make calls to the brighte payment Service
+
+## installation
+`npm i brighte-sdk-js-payment`
+
+## usage
+```
+const userId = 1, 
+      auth = 'thisismyjwt', 
+      url = 'https://api.brighte.com.au/v1/';
+const api = new paymentService(url, auth);
+const result = await api.getPaymentMethods(userId);
+```
+
+## supported methods
+1. getPaymentMethods(`userId`)
+2. savePaymentMethod(`paymentMethod`)
+3. updatePaymentMethod(`paymentMethod`)
+4. makePayment(`userId`, `methodId`, `amount`, `loanId`)
+
+## language
+Compiles to es2017.
